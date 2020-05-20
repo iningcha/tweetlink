@@ -11,12 +11,7 @@
 
 ## Overview of Commands
 
-- `yarn run lint`
-  - Runs the linter and fixes any formatting issues
-- `yarn test`
-  - Runs the Testing Suite in Jest
-
-To compile and run the code
-- go into the tweetlinks folder
-- npm install --> this will install the dependencies
-- npm start --> start the app
+- `yarn install`
+  - This will install all the dependencies
+- `yarn start`
+  - Starting the web app
