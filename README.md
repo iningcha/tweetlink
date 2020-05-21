@@ -8,6 +8,7 @@
 ## Viewing the Site
 
 1.  Go to https://tweetlinks.herokuapp.com/, this is where the app is hosted
+   - For development notes, the app is deployed to heroku through the command `git push heroku master`
 
 ## Overview of Commands
 
