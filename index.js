@@ -1,6 +1,7 @@
 const cookieSession = require("cookie-session");
 const express = require("express");
 const app = express();
+
 const passport = require("passport");
 const passportSetup = require("./config/passportSetUp");
 const session = require("express-session");
@@ -9,6 +10,7 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cors = require("cors");
 const cookieParser = require("cookie-parser"); // parse cookie header
+const bodyParser = require('body-parser');
 
 // connect to mongodb
 mongoose.connect(keys.MONGODB_URI, () => {
@@ -21,6 +23,9 @@ app.use(
     maxAge: 24 * 60 * 60 * 100
   })
 );
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse cookies
 app.use(cookieParser());
@@ -65,6 +70,22 @@ app.get("/", authCheck, (req, res) => {
   });
 });
 
+app.get("/getTweets", (req, res) => {
+  try {
+    const TimelineTweet = require('./models/timelineTweetModel');
+    // get all the users
+    TimelineTweet.find({}, function(err, tweets) {
+      if (err) throw err;
+
+      // object of all the users
+      // console.log(tweets);
+      res.json(tweets);
+    });
+    // res.json({ moo })
+  } catch (err) {
+    // next(err)
+  }
+});
 
 
 

@@ -11,17 +11,22 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mongoose": "^5.9.16",
+    "mtwitter": "^1.6.4",
     "passport": "^0.4.1",
     "passport-twitter": "^1.0.4",
     "postcss-loader": "^3.0.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-scroll": "^1.7.16",
+    "react-twitter-embed": "^3.0.3",
+    "request": "^2.88.2"
   },
   "devDependencies": {
+    "nodemon": "^2.0.4",
     "webpack": "^4.43.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {

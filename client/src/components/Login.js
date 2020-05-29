@@ -19,6 +19,7 @@ function Login(props) {
     props.handleNotAuthenticated();
   };
 
+
     const { authenticated } = props;
     return (
       <ul className="menu">
