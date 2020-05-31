@@ -44,8 +44,6 @@ router.get(
     failureRedirect: "/auth/login/failed"
   }),(req, res) => { // success
 
-    console.log("is there success here?")
-
     // get timeline from twitter
     var twitter = new mtwitter({
       consumer_key: keys.TWITTER_CONSUMER_KEY,

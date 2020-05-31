@@ -8,16 +8,11 @@ const Login = (props) => {
   const handleSignInClick = () => {
     // Authenticate using via passport api in the backend
     window.open("https://tweetlinks.herokuapp.com/auth/twitter", "_self");
-    console.log("bruh")
-    // const response = await fetch(`/auth/twitter`)
-    // console.log(response)
-
   };
 
   const handleLogoutClick = () => {
     // Logout using Twitter passport api
     window.open("https://tweetlinks.herokuapp.com/auth/logout", "_self");
-    // await fetch("/auth/logout");
     props.handleNotAuthenticated();
   };
 

@@ -20,12 +20,9 @@ const SearchBox = (props) => {
     setSearchResults(tweetItems.slice(0, 100))
   }
 
-
   const handleChange = event => {
     setSearchValue(event.target.value);
   };
-
-
 
     return (
       <div className="searchContainer">
