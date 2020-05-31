@@ -22,9 +22,9 @@ const options = {
 
 mongoose.connect(keys.MONGODB_URI,options, function(err, res) {
   if (err) {
-    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    console.log ('ERROR connecting to: ' + keys.MONGODB_URI + '. ' + err);
     } else {
-    console.log ('Succeeded connected to: ' + uristring);
+    console.log ('Succeeded connected to: ' + keys.MONGODB_URI);
     }
 });
 
