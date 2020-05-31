@@ -27,9 +27,9 @@ passport.use(
       consumerSecret: keys.TWITTER_CONSUMER_SECRET,
       callbackURL: "https://tweetlinks.herokuapp.com/auth/twitter/redirect"
     },
-    async (token, tokenSecret) => {
+    async (token, tokenSecret, profile, done) => {
 
-      console.log("logging!", token, tokenSecret, profile)
+      console.log("logging!", token, tokenSecret)
 
       // find current user in UserModel
       const currentUser = await User.findOne({
