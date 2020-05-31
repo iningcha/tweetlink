@@ -9,10 +9,10 @@ const TWITTER_TOKENS = {
 // const DB_USER = "tweetlink";
 // const DB_PASSWORD = "DUX8riU9sUUjX7j";
 // const MONGODB = {
-//   MONGODB_URI: `mongodb+srv://tweetlink:${DB_PASSWORD}@cluster0-0qqap.mongodb.net/test?retryWrites=true&w=majority`
+//   MONGODB_URI: mongodb+srv://tweetlink:${DB_PASSWORD}@cluster0-0qqap.mongodb.net/test?retryWrites=true&w=majority`
 // };
 const MONGODB = {
-  MONGODB_URI: process.env.MONGODB_URL || "mongodb://localhost/dbName"
+  MONGODB_URI: `mongodb://heroku_jpwjjkz6:18hs99vpklopsms5e82oc2eu8e@ds357708.mlab.com:57708/heroku_jpwjjkz6` || "mongodb://localhost/dbName"
 };
 
 
