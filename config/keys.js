@@ -12,7 +12,7 @@ const TWITTER_TOKENS = {
 //   MONGODB_URI: `mongodb+srv://tweetlink:${DB_PASSWORD}@cluster0-0qqap.mongodb.net/test?retryWrites=true&w=majority`
 // };
 const MONGODB = {
-  MONGODB_URI: process.env.MONGODB_URL || "mongodb://localhost/dbName";
+  MONGODB_URI: process.env.MONGODB_URL || "mongodb://localhost/dbName"
 };
 
 
