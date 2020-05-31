@@ -27,7 +27,7 @@ passport.use(
       consumerSecret: keys.TWITTER_CONSUMER_SECRET,
       callbackURL: "https://tweetlinks.herokuapp.com/auth/twitter/redirect"
     },
-    async (token, tokenSecret, profile, done) => {
+    async (token, tokenSecret) => {
 
       console.log("logging!", token, tokenSecret, profile)
 
@@ -35,6 +35,7 @@ passport.use(
       const currentUser = await User.findOne({
         twitterId: profile._json.id_str
       });
+      console.log("logging! - can i connect to databse? ", currentUser)
       // create new user if the database doesn't have this user
       if (!currentUser) {
         const newUser = await new User({
