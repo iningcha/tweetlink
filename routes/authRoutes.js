@@ -44,15 +44,17 @@ router.get(
     failureRedirect: "/auth/login/failed"
   }),(req, res) => { // success
 
+    console.log("is there success here?")
+
     // get timeline from twitter
     var twitter = new mtwitter({
       consumer_key: keys.TWITTER_CONSUMER_KEY,
       consumer_secret: keys.TWITTER_CONSUMER_SECRET,
       access_token_key: keys.TWITTER_ACCESS_TOKEN,
       access_token_secret: keys.TWITTER_TOKEN_SECRET
-  });
+    });
 
-  twitter.get("/statuses/home_timeline.json", { "include_entities": false, "count" : 200 },
+    twitter.get("/statuses/home_timeline.json", { "include_entities": false, "count" : 200 },
       function (err, data) {
 
           if (err) {
