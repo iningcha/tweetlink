@@ -29,6 +29,8 @@ passport.use(
     },
     async (token, tokenSecret, profile, done) => {
 
+      console.log("logging!", token, tokenSecret, profile)
+
       // find current user in UserModel
       const currentUser = await User.findOne({
         twitterId: profile._json.id_str
