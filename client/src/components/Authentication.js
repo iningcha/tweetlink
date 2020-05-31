@@ -10,7 +10,7 @@ const Authentication = () => {
   const [isAuthenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/auth/login/success", {
+    fetch("/auth/login/success", {
       method: "GET",
       credentials: "include",
       headers: {

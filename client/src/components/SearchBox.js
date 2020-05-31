@@ -18,7 +18,6 @@ const SearchBox = (props) => {
     const response = await fetch(searchType+`?param=`+searchValue)
     const tweetItems = await response.json()
     setSearchResults(tweetItems.slice(0, 100))
-    console.log(tweetItems)
   }
 
 

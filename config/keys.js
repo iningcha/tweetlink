@@ -4,14 +4,6 @@ const TWITTER_TOKENS = {
   TWITTER_CONSUMER_SECRET: "7lDJoGOHtCC0hQAAjiedaeElLI1VE70yqHnywvyOFt5VrkFKbq",
   TWITTER_ACCESS_TOKEN: "769225275510956032-lYO7ZjsCZzYXbI5m5E5ahcr9Y3R6Ajp",
   TWITTER_TOKEN_SECRET: "BvZuB9pMHD90QYfymAgjE8Tve9JxD1B4b1WolMejjDuMO",
-  // TWITTER_TOKEN: "",
-  // TWITTER_TOKEN_SECRET: "",
-  // set token(token) {
-  //   TWITTER_TOKEN = token;
-  // },
-  // set token_secret(secret) {
-  //   TWITTER_TOKEN_SECRET = secret;
-  // },
 };
 
 // const DB_USER = "tweetlink";

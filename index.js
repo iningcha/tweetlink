@@ -90,7 +90,6 @@ app.get("/findByHashTag", (req, res) => {
     TimelineTweet.find({"text": { "$regex": query, "$options": "i" }}, function(err, tweets) {
       if (err) throw err;
       res.json(tweets);
-      console.log(tweets.length)
     });
 
   } catch (err) {
@@ -110,6 +109,13 @@ app.get("/findByLocation", (req, res) => {
     console.error(err);
   }
 });
+const path = require('path')
+
+app.use(express.static(path.join(__dirname, 'build')))
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 // Choose the port and start the server
 const PORT = process.env.PORT || 5000
