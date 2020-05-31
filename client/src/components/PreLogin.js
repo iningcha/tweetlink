@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { FaTwitter } from 'react-icons/fa';
 import './PreLogin.css'
 
-function PreLogin() {
-
-
-  // const handleSignInClick = () => {
-  //   // Authenticate using via passport api in the backend
-  //   // Open Twitter login page
-  //   // Upon successful login, a cookie session will be stored in the client
-  //   window.open("http://localhost:5000/auth/twitter", "_self");
-  // };
-
-  // const handleLogoutClick = () => {
-  //   // Logout using Twitter passport api
-  //   // Set authenticated state to false in the HomePage
-  //   window.open("http://localhost:5000/auth/logout", "_self");
-  //   props.handleNotAuthenticated();
-  // };
-
+const PreLogin = (props) => {
 
     return (
-      <h1>Welcome!</h1>
+      <div className="prelogin">
+        <h1>Welcome to TweetLink</h1>
+        <h3 className="subtext">Login with Twitter to unlock features</h3>
+        <FaTwitter className="twitterIcon"/>
+      </div>
+
     )
 
 }

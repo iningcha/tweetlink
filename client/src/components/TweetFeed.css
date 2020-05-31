@@ -1,0 +1,17 @@
+.tweetFeed {
+    padding: 2%;
+    width: 40%;
+    border-radius: 25px;
+    background: white;
+    margin: 50px 70px;
+}
+
+.title {
+    margin: 20px;
+    margin-bottom: 5px;
+}
+
+.scrollArea {
+    overflow-y: scroll;
+    height: 900px;
+}

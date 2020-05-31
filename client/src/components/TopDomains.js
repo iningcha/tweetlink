@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './TopDomains.css'
 
-function TopDomains() {
+const TopDomains = (props) => {
 
-
-  // const handleSignInClick = () => {
-  //   // Authenticate using via passport api in the backend
-  //   // Open Twitter login page
-  //   // Upon successful login, a cookie session will be stored in the client
-  //   window.open("http://localhost:5000/auth/twitter", "_self");
-  // };
-
-  // const handleLogoutClick = () => {
-  //   // Logout using Twitter passport api
-  //   // Set authenticated state to false in the HomePage
-  //   window.open("http://localhost:5000/auth/logout", "_self");
-  //   props.handleNotAuthenticated();
-  // };
-
+    const topDomains =
+    <ol className="domains">
+      {props.topDomains.map((domain) =>
+        <li>{domain && domain[0]}</li>
+      )}
+    </ol>;
 
     return (
-      <h1>I am a TopDomains</h1>
+      <div className="topDomains">
+        <h1 className="title">Top Domains</h1>
+        <div className="subText">Which domains were the most visited?</div>
+        {topDomains}
+      </div>
     )
 
 }

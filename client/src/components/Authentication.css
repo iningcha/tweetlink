@@ -1,0 +1,9 @@
+.mainContainer {
+    align-items: center;
+}
+
+.body {
+  background-image: linear-gradient(-90deg, #84ceeb, #c1c8e4);
+  height: 100vh;
+  overflow: auto;
+}

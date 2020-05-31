@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const timelineTweetSchema = new Schema({
-  id_str: String,
+  id_str: {
+    type: String,
+    index: true,
+    unique: true
+  },
   user: Object,
   text: String,
   createdAt: { type: Date, expires: 604800, default: Date.now } // 604800 seconds in a week

@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
+import { FaTwitter } from 'react-icons/fa';
 import './Login.css'
 
-function Login(props) {
-
+const Login = (props) => {
 
   const handleSignInClick = () => {
     // Authenticate using via passport api in the backend
-    // Open Twitter login page
-    // Upon successful login, a cookie session will be stored in the client
     window.open("http://localhost:5000/auth/twitter", "_self");
   };
 
   const handleLogoutClick = () => {
     // Logout using Twitter passport api
-    // Set authenticated state to false in the HomePage
     window.open("http://localhost:5000/auth/logout", "_self");
     props.handleNotAuthenticated();
   };
@@ -22,16 +19,24 @@ function Login(props) {
 
     const { authenticated } = props;
     return (
-      <ul className="menu">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        {authenticated ? (
-          <li onClick={handleLogoutClick}>Logout</li>
-        ) : (
-          <li onClick={handleSignInClick}>Login</li>
-        )}
-      </ul>
+      <div className="menu">
+        <div className="title">TweetLink</div>
+        <div class="links">
+          <div className="homeLink">
+            <Link className="link" to="/">Home</Link>
+          </div>
+          {authenticated ? (
+            <button className="logout">
+              <div onClick={handleLogoutClick}>Logout</div>
+            </button>
+          ) : (
+            <button className="login">
+              <div onClick={handleSignInClick}>Login with Twitter <FaTwitter/></div>
+            </button>
+          )}
+        </div>
+
+      </div>
     )
 
 }

@@ -28,9 +28,6 @@ passport.use(
       callbackURL: "/auth/twitter/redirect"
     },
     async (token, tokenSecret, profile, done) => {
-      // save token and tokenSecret
-      // keys.TWITTER_TOKEN = token;
-      // keys.TWITTER_TOKEN_SECRET = tokenSecret;
 
       // find current user in UserModel
       const currentUser = await User.findOne({

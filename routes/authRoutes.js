@@ -52,8 +52,9 @@ router.get(
       access_token_secret: keys.TWITTER_TOKEN_SECRET
   });
 
-  twitter.get("/statuses/home_timeline.json", { "include_entities": false },
+  twitter.get("/statuses/home_timeline.json", { "include_entities": false, "count" : 200 },
       function (err, data) {
+
           if (err) {
               console.error(err.toString());
           }
@@ -61,7 +62,6 @@ router.get(
           async function loadTweets() {
             try {
               await TimelineTweet.insertMany(data);
-              console.log('Done!');
             } catch(e) {
               console.log(e);
             }

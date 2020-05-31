@@ -1,0 +1,19 @@
+.searchIcon {
+}
+
+.searchContainer {
+    height:600px;
+    padding: 30px;
+    width: 70%;
+    border-radius: 25px;
+    background: white;
+}
+
+.input {
+    padding: 5px;
+}
+
+.resultList {
+    overflow-y: scroll;
+    height: 500px;
+}

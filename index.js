@@ -24,7 +24,6 @@ app.use(
   })
 );
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse cookies
@@ -74,47 +73,43 @@ app.get("/getTweets", (req, res) => {
   try {
     const TimelineTweet = require('./models/timelineTweetModel');
     // get all the users
-    TimelineTweet.find({}, function(err, tweets) {
+    TimelineTweet.find({}).sort('created_at').exec(function(err, tweets) {
       if (err) throw err;
-
-      // object of all the users
-      // console.log(tweets);
       res.json(tweets);
     });
-    // res.json({ moo })
   } catch (err) {
-    // next(err)
+    console.error(err);
   }
 });
 
+app.get("/findByHashTag", (req, res) => {
+  try {
+    const TimelineTweet = require('./models/timelineTweetModel');
+    // get all the users
+    var query = "#" + req.query.param;
+    TimelineTweet.find({"text": { "$regex": query, "$options": "i" }}, function(err, tweets) {
+      if (err) throw err;
+      res.json(tweets);
+      console.log(tweets.length)
+    });
 
+  } catch (err) {
+    console.error(err);
+  }
+});
 
-// // Serve our api route /cow that returns a custom talking text cow
-// app.get('/api/cow/:say', cors(), async (req, res, next) => {
-//   try {
-//     const text = req.params.say
-//     const moo = cowsay.say({ text })
-//     res.json({ moo })
-//   } catch (err) {
-//     next(err)
-//   }
-// })
-// Serve our base route that returns a Hello World cow
-// app.get('/api/cow/', cors(), async (req, res, next) => {
-//   try {
-//     console.log("cowwwwww")
-//   } catch (err) {
-//     next(err)
-//   }
-// })
-
-// const path = require('path')
-// // Serve static files from the React frontend app
-// app.use(express.static(path.join(__dirname, 'client/build')))
-// // Anything that doesn't match the above, send back index.html
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname + '/client/build/index.html'))
-// })
+app.get("/findByLocation", (req, res) => {
+  try {
+    const TimelineTweet = require('./models/timelineTweetModel');
+    // get all the users
+    TimelineTweet.find({"user.location": { "$regex": req.query.param, "$options": "i" }}, function(err, tweets) {
+      if (err) throw err;
+      res.json(tweets);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+});
 
 // Choose the port and start the server
 const PORT = process.env.PORT || 5000
