@@ -20,11 +20,13 @@ const options = {
   family: 4 // Use IPv4, skip trying IPv6
 };
 
-mongoose.connect(keys.MONGODB_URI,options, () => {
-  console.log("connected to mongo db");
+mongoose.connect(keys.MONGODB_URI,options, function(err, res) {
+  if (err) {
+    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+    console.log ('Succeeded connected to: ' + uristring);
+    }
 });
-
-
 
 app.use(
   cookieSession({
