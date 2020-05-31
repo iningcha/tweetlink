@@ -7,10 +7,12 @@ const TWITTER_TOKENS = {
 };
 
 // const DB_USER = "tweetlink";
-const DB_PASSWORD = "DUX8riU9sUUjX7j";
-const MONGODB = {
-  MONGODB_URI: `mongodb+srv://tweetlink:${DB_PASSWORD}@cluster0-0qqap.mongodb.net/test?retryWrites=true&w=majority`
-};
+// const DB_PASSWORD = "DUX8riU9sUUjX7j";
+// const MONGODB = {
+//   MONGODB_URI: `mongodb+srv://tweetlink:${DB_PASSWORD}@cluster0-0qqap.mongodb.net/test?retryWrites=true&w=majority`
+// };
+const MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/dbName";
+
 
 const SESSION = {
   COOKIE_KEY: "tweeklinksession"

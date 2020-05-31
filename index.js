@@ -13,9 +13,19 @@ const cookieParser = require("cookie-parser"); // parse cookie header
 const bodyParser = require('body-parser');
 
 // connect to mongodb
-mongoose.connect(keys.MONGODB_URI, () => {
+const options = {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  family: 4 // Use IPv4, skip trying IPv6
+};
+
+mongoose.connect(keys.MONGODB_URI,options, () => {
   console.log("connected to mongo db");
 });
+
+
+
 app.use(
   cookieSession({
     name: "session",
