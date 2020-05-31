@@ -25,7 +25,7 @@ passport.use(
     {
       consumerKey: keys.TWITTER_CONSUMER_KEY,
       consumerSecret: keys.TWITTER_CONSUMER_SECRET,
-      callbackURL: "/auth/twitter/redirect"
+      callbackURL: "https://tweetlinks.herokuapp.com/auth/twitter/redirect"
     },
     async (token, tokenSecret, profile, done) => {
 
