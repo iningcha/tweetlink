@@ -12,6 +12,10 @@ const SearchBox = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchType, setSearchType] = useState(`/findByHashTag`);
 
+  useEffect(() => {
+    setSearchResults([])
+  }, [searchValue])
+
   const handleSearch = async (e) => {
     e.preventDefault();
 
